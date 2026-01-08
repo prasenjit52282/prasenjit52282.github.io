@@ -30,7 +30,7 @@ experience:
     company_logo: 'smu'
     location: 80 Stamford Road, Singapore
     date_start: '2025-07-07'
-    date_end: ''
+    date_end: '2026-01-06'
     description: |2-
         Responsibilities include:
         
