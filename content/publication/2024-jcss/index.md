@@ -12,4 +12,8 @@ links:
     icon: scroll
     name: Link
     url: 'https://dl.acm.org/doi/full/10.1145/3685694'
+  - icon_pack: fas
+    icon: newspaper
+    name: Demo Video
+    url: 'https://www.youtube.com/watch?v=sOo6uAFmQPY'
 ---

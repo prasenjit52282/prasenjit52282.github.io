@@ -16,4 +16,8 @@ links:
     icon: github
     name: Repository
     url: 'https://github.com/arghasen10/mmDrive'
+  - icon_pack: fas
+    icon: newspaper
+    name: Demo Video
+    url: 'https://www.youtube.com/watch?v=Pf5jx1EHGWE'
 ---

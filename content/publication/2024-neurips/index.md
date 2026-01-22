@@ -16,4 +16,8 @@ links:
     icon: open-data
     name: Open data
     url: 'https://github.com/prasenjit52282/dalton-dataset'
+  - icon_pack: fas
+    icon: newspaper
+    name: Demo Video
+    url: 'https://www.youtube.com/watch?v=6BpTklAAlTo'
 ---
