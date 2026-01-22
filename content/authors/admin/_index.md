@@ -22,7 +22,7 @@ role: Prime Minister's Research Fellow
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: UbiNet, IIT Kharagpur
-    url: https://cse.iitkgp.ac.in/resgrp/ubinet/
+    url: https://ubinet-iitkgp.github.io/ubinet/
 
 # Short bio (displayed in user profile at end of posts)
 bio: I am a doctoral researcher in ubiquitous computing and sensing, currently at the IIT Kharagpur (India).
@@ -52,19 +52,22 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: '/#contact'
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/prasenjit52282
-    label: Follow me on Twitter
-    display:
-      header: true
+    link: "mailto:prasenjitkarmakar52282@gmail.com"
+  # - icon: twitter
+  #   icon_pack: fab
+  #   link: https://twitter.com/prasenjit52282
+  #   label: Follow me on Twitter
+  #   display:
+  #     header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.com/citations?user=uK96UkwAAAAJ&hl=en
   - icon: github
     icon_pack: fab
     link: https://github.com/prasenjit52282
+    label: Follow me on GitHub
+    display:
+      header: true
   - icon: linkedin-in
     icon_pack: fab
     link: https://www.linkedin.com/in/prasenjit52282/
@@ -74,9 +77,10 @@ social:
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
-  # - icon: cv
-  #   icon_pack: ai
-  #   link: files/cv.pdf
+  - icon: cv
+    icon_pack: ai
+    link: files/prasenjit_CV.pdf
+    
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
@@ -87,7 +91,7 @@ highlight_name: true
 
 **About me**
 
-I am presently pursuing Ph.D. in the Department of Computer Science and Engineering at the Indian Institute of Technology Kharagpur, India. I am a member of [UbiNet: Ubiquitous Networked Systems Lab](https://cse.iitkgp.ac.in/resgrp/ubinet/). I have been awarded [Prime Minister's Fellowship](https://www.pmrf.in/) for my Doctoral Research.
+I am presently pursuing Ph.D. in the Department of Computer Science and Engineering at the Indian Institute of Technology Kharagpur, India. I am a member of [UbiNet: Ubiquitous Networked Systems Lab](https://ubinet-iitkgp.github.io/ubinet/). My Doctoral Research is supported by [Prime Minister's Research Fellowship](https://www.pmrf.in/).
 
 **Open source and open data**
 * [Dalton-Dataset](https://github.com/prasenjit52282/dalton-dataset) on Indoor Air pollution and Activites, India 
