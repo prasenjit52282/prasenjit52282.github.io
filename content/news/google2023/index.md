@@ -14,7 +14,7 @@ links:
   - icon_pack: fas
     icon: scroll
     name: Website
-    url: 'https://research.google/programs-and-events/society-centered-ai/google-society-centered-ai-research-awardees/'
+    url: 'https://research.google/programs-and-events/past-programs/award-for-inclusion-research-program/'
   - icon_pack: fas
     icon: newspaper
     name: Demo Video
