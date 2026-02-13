@@ -10,7 +10,7 @@ publication: "ACM MobileHCI 2024"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://dl.acm.org/doi/10.1145/3640471.3680243'
   - icon_pack: fas
     icon: newspaper

@@ -10,7 +10,7 @@ publication: "IEEE PerCom 2023"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1109/PERCOM56429.2023.10099264'
   - icon_pack: fab
     icon: github

@@ -10,7 +10,7 @@ publication: "ACM SIGSPATIAL 2020 (poster)"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1145/3397536.3422273'
 ---
 <!-- Can put a featured.png in side this folder for view -->

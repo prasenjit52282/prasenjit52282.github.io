@@ -10,7 +10,7 @@ publication: "IEEE PerCom 2025 (WIP)"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://ieeexplore.ieee.org/abstract/document/10503501'
   - icon_pack: fas
     icon: newspaper

@@ -9,6 +9,10 @@ featured: true
 publication: "ACM CHI 2026"
 links:
   - icon_pack: fas
+    icon: scroll
+    name: Paper
+    url: 'https://arxiv.org/abs/2602.01084'
+  - icon_pack: fas
     icon: newspaper
     name: Demo Video
     url: 'https://www.youtube.com/watch?v=F1LfQBEomHc'

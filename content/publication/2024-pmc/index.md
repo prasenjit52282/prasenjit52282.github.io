@@ -10,6 +10,6 @@ publication: "Pervasive and Mobile Computing"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://www.sciencedirect.com/science/article/pii/S1574119224000750'
 ---

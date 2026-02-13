@@ -10,7 +10,7 @@ publication: "NeurIPS 2024"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://arxiv.org/abs/2407.14501'
   - icon_pack: ai
     icon: open-data

@@ -10,7 +10,7 @@ publication: "ACM Transactions on Sensor Networks, Vol. 19, No. 3"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1145/3580279'
   - icon_pack: fab
     icon: github

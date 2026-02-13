@@ -10,7 +10,7 @@ publication: "ACM BuildSys 2021"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1145/3486611.3486663'
   - icon_pack: fab
     icon: github

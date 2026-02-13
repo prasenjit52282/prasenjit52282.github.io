@@ -10,7 +10,7 @@ publication: "ACM Journal on Computing and Sustainable Societies, Vol. 2, No. 3"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://dl.acm.org/doi/full/10.1145/3685694'
   - icon_pack: fas
     icon: newspaper

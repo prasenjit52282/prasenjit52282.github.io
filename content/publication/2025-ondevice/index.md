@@ -10,7 +10,7 @@ publication: "IEEE PerCom 2025 (WIP)"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://www.computer.org/csdl/proceedings-article/percom-workshops/2025/355300a677/27FQVA8jLaM'
   - icon_pack: fas
     icon: newspaper

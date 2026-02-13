@@ -10,7 +10,7 @@ publication: "COMSNETS 2023"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1109/COMSNETS56262.2023.10041297'
   - icon_pack: fab
     icon: github

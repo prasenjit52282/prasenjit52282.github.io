@@ -10,7 +10,7 @@ publication: "ACM Transactions on Internet of Things, Vol. 4, No. 1"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1145/3549548'
   - icon_pack: fab
     icon: github

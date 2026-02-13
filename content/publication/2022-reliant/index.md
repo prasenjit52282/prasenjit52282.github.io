@@ -10,6 +10,6 @@ publication: "IEEE Transactions on Network and Service Management, Vol. 19, Issu
 links:
   - icon_pack: fas
     icon: scroll
-    name: Link
+    name: Paper
     url: 'https://doi.org/10.1109/TNSM.2022.3196852'
 ---
