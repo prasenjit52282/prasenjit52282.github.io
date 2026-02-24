@@ -79,7 +79,7 @@ social:
   # and uncomment the lines below.
   - icon: cv
     icon_pack: ai
-    link: files/prasenjit_CV.pdf
+    link: files/Prasenjit_Karmakar_CV.pdf
     
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
