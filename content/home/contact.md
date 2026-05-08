@@ -16,7 +16,13 @@ content:
   autolink: false
 
   # # Contact details (edit or remove options as required)
-  email: prasenjitkarmakar52282@gmail.com
+  email: henrik.sauer@uni-mannheim.de
+  address:
+    street: L7, 3-5, Room 203
+    city: Mannheim
+    postcode: '68161'
+    country: Germany
+    country_code: DE
 
 design:
   columns: '2'
