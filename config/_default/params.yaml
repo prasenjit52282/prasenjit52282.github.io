@@ -18,8 +18,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'Personal page'
-    twitter: 'prasenjit52282'
+    description: 'PhD candidate in Economics at the University of Mannheim. Research in Financial Economics, Corporate Finance, and Industrial Organization.'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -43,12 +43,9 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Prasenjit Karmakar. This work is licensed under {license}.'
+    notice: '© {year} Henrik Sauer.'
     license:
-      enable: true
-      allow_derivatives: true
-      share_alike: true
-      allow_commercial: true
+      enable: false
 
 # Localization
 
@@ -74,7 +71,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/simongravelle/simongravelle.github.io'
+    url: 'https://github.com/henriksauer/henriksauer.github.io'
     content_dir: content
     branch: master
   avatar:
