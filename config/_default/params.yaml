@@ -43,12 +43,9 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Prasenjit Karmakar. This work is licensed under {license}.'
+    notice: '© {year} Henrik Sauer.'
     license:
-      enable: true
-      allow_derivatives: true
-      share_alike: true
-      allow_commercial: true
+      enable: false
 
 # Localization
 
