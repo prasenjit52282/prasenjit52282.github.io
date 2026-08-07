@@ -12,8 +12,8 @@ links:
     icon: scroll
     name: Paper
     url: 'https://arxiv.org/abs/2605.09434'
-  # - icon_pack: fas
-  #   icon: newspaper
-  #   name: Demo Video
-  #   url: ''
+  - icon_pack: fas
+    icon: newspaper
+    name: Demo Video
+    url: 'https://www.youtube.com/watch?v=COywxLYNXa8'
 ---
