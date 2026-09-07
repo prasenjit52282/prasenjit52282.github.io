@@ -1,24 +1,28 @@
-# Academic template
+# prasenjit52282.github.io
 
-Simple academic template that is easy to deploy on Github page, and relatively
-easy to customise furthermore using css. Here is the [live](https://simongravelle.github.io/) version.
+Personal academic site for Prasenjit Karmakar. The entire site is a single
+self-contained file: **`index.html`** (HTML, CSS and JS all inline). There is
+no build step, no framework, and no static site generator — just edit the
+file and push.
 
-Enter your publications as a folder in [content/publication/](content/publication/).
+## Editing
 
-[![image](https://user-images.githubusercontent.com/43388542/216845033-cc7b0a28-60ff-4e86-a5ce-2c93930e08e2.png)](https://simongravelle.github.io/)
+Open `index.html` in any editor. Content is organized into clearly
+labeled `<section>` blocks (About, Experience, Publications, Open Source,
+News, Contact) — find the section you want to change and edit the markup
+directly. Images live under `img/` and the CV under `files/`.
 
-[![image](https://user-images.githubusercontent.com/43388542/216845176-a6effb49-db58-42b2-8b36-f65d5b959e39.png)](https://simongravelle.github.io/)
+## Preview locally
 
-It comes with a good looking dark mode:
-
-[![image](https://user-images.githubusercontent.com/43388542/216845058-77fe9c11-5086-494f-b83d-83d26c252a5b.png)](https://simongravelle.github.io/)
-
-Feel free to use the template, it is originaly
-from [wowchemy](https://wowchemy.com/), with some custom css
-adapted from [nickballousite](https://github.com/nballou) webpage.
-
-To build localy, type:
+Any static file server works, e.g.:
 
 ```
-hugo server
+python3 -m http.server 8000
 ```
+
+then open http://localhost:8000/.
+
+## Deploy
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which publishes
+the repository root to GitHub Pages — no build step involved.

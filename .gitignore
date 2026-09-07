@@ -1,6 +1,3 @@
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-.hugo_build.lock
 /__pycache__
 /**/.DS_Store
+temp
