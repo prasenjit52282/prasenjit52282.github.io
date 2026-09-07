@@ -389,9 +389,32 @@
   .os-list a{font-weight:600;}
   .os-list p{margin:.25em 0 0;color:var(--text-muted);font-size:.92rem;}
 
+  .r-mobile-progress{
+    display:none;
+    position:sticky;top:64px;z-index:40;
+    background:color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    padding:10px 24px;margin-bottom:28px;
+  }
+  .r-mp-label{display:block;font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+  .r-mp-track{display:flex;gap:6px;}
+  .r-mp-seg{flex:1;height:5px;padding:0;border:none;border-radius:999px;background:var(--border);cursor:pointer;}
+  .r-mp-seg.done{background:var(--accent-soft);}
+  .r-mp-seg.active{background:var(--accent);}
+  .r-mp-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .r-mp-pill{
+    background:var(--accent-soft);
+    border-radius:10px;padding:.4em .7em;
+  }
+  .r-mp-pill-top{display:block;color:var(--accent);font-weight:600;font-size:.72rem;white-space:nowrap;}
+  .r-mp-pill-date{color:var(--text-muted);font-weight:500;margin-right:.4em;}
+  .r-mp-pill-sub{display:block;color:var(--text-muted);font-weight:500;font-size:.66rem;margin-top:.2em;white-space:nowrap;}
+
   @media (max-width:900px){
     .r-layout{grid-template-columns:1fr;}
     .r-sidebar{display:none;}
+    .r-mobile-progress{display:block;}
   }
   @media (max-width:760px){
     .nav-links{
@@ -984,6 +1007,18 @@
     <p class="muted">All four studies share the same 89.1-million-reading field deployment across 30 real indoor sites in India, so every finding below was validated at scale, not in a single lab room.</p>
   </section>
 
+  <div class="r-mobile-progress">
+    <span class="r-mp-label" id="rMobileChapterLabel">Chapter 01 &middot; DALTON</span>
+    <div class="r-mp-track">
+      <button class="r-mp-seg" data-chapter="chapter-dalton" aria-label="Jump to DALTON"></button>
+      <button class="r-mp-seg" data-chapter="chapter-dynamics" aria-label="Jump to Pollution Dynamics"></button>
+      <button class="r-mp-seg" data-chapter="chapter-cowear" aria-label="Jump to CoWear"></button>
+      <button class="r-mp-seg" data-chapter="chapter-pohar" aria-label="Jump to PoHAR"></button>
+      <button class="r-mp-seg" data-chapter="chapter-today" aria-label="Jump to PoWear Today"></button>
+    </div>
+    <div class="r-mp-pills" id="rMpPills"></div>
+  </div>
+
   <div class="wrap r-layout">
 
     <aside class="r-sidebar">
@@ -1376,14 +1411,70 @@
       if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
+
+  // Research: mobile sticky progress bar
+  var rMpSegs = document.querySelectorAll('.r-mp-seg');
+  var rMpLabel = document.getElementById('rMobileChapterLabel');
+  var rMpPills = document.getElementById('rMpPills');
+  var rMpChapterLabels = {
+    'chapter-dalton':'Chapter 01 &middot; DALTON',
+    'chapter-dynamics':'Chapter 02 &middot; Pollution Dynamics',
+    'chapter-cowear':'Chapter 03 &middot; CoWear',
+    'chapter-pohar':'Chapter 04 &middot; PoHAR',
+    'chapter-today':'Beyond The Chapters &middot; PoWear Today'
+  };
+  var rMpMilestones = {
+    'chapter-dalton':[
+      {date:'Sep 2024', title:'DALTON Dataset', sub:'NeurIPS 2024, D&amp;B Track'},
+      {date:'Jan 2025', title:'DALTON System', sub:'IN, Application No. 202531006180'}
+    ],
+    'chapter-dynamics':[
+      {date:'Sep 2024', title:'Pollution Dynamics', sub:'ACM JCSS 2024'}
+    ],
+    'chapter-cowear':[
+      {date:'Jan 2025', title:'CoWear Wearable', sub:'IN, Application No. 202531001296'},
+      {date:'Apr 2026', title:'CoWear AR Study', sub:'ACM CHI 2026'}
+    ],
+    'chapter-pohar':[
+      {date:'May 2026', title:'PoHAR AI', sub:'IEEE DCOSS-IoT 2026'}
+    ],
+    'chapter-today':[
+      {date:'Aug 2026', title:'PoWear Today', sub:'IN, Application No. 202631101632'}
+    ]
+  };
+  rMpSegs.forEach(function(seg){
+    seg.addEventListener('click', function(){
+      var target = document.getElementById(seg.getAttribute('data-chapter'));
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  function setActiveChapter(chapterId){
+    rNavItems.forEach(function(item){
+      item.classList.toggle('active', item.getAttribute('data-chapter') === chapterId);
+    });
+    var seenActive = false;
+    rMpSegs.forEach(function(seg){
+      var isActive = seg.getAttribute('data-chapter') === chapterId;
+      seg.classList.toggle('active', isActive);
+      seg.classList.toggle('done', !isActive && !seenActive);
+      if(isActive) seenActive = true;
+    });
+    if(rMpLabel && rMpChapterLabels[chapterId]) rMpLabel.innerHTML = rMpChapterLabels[chapterId];
+    if(rMpPills){
+      var milestones = rMpMilestones[chapterId] || [];
+      rMpPills.innerHTML = milestones.map(function(m){
+        return '<span class="r-mp-pill">'
+          + '<span class="r-mp-pill-top"><span class="r-mp-pill-date">' + m.date + '</span>' + m.title + '</span>'
+          + '<span class="r-mp-pill-sub">' + m.sub + '</span>'
+          + '</span>';
+      }).join('');
+    }
+  }
+  setActiveChapter('chapter-dalton');
   if('IntersectionObserver' in window && rChapters.length){
     var rObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          rNavItems.forEach(function(item){
-            item.classList.toggle('active', item.getAttribute('data-chapter') === entry.target.id);
-          });
-        }
+        if(entry.isIntersecting) setActiveChapter(entry.target.id);
       });
     }, {rootMargin:'-40% 0px -50% 0px'});
     rChapters.forEach(function(ch){ rObserver.observe(ch); });
