@@ -340,6 +340,7 @@
 
   .r-findings-label{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text);margin-bottom:14px;}
   .r-findings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px;}
+  .r-findings-2col{grid-template-columns:repeat(2,1fr);}
   .r-finding{border-left:2px solid var(--border);padding-left:14px;}
   .r-finding h5{font-size:.9rem;font-weight:700;margin-bottom:.4em;color:var(--text);font-family:inherit;}
   .r-finding p{font-size:.84rem;color:var(--text-muted);margin:0;}
@@ -378,7 +379,9 @@
   .btn-daltonair .da-air{color:#f2711c;font-weight:800;}
 
   .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-  #research{border-top:none;padding-top:56px;}
+  #about .hero-inner{padding-left:24px;padding-right:24px;}
+  #research{border-top:none;padding-top:56px;padding-left:24px;padding-right:24px;}
+  #opensource-section{padding-left:24px;padding-right:24px;}
   .os-grid h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:1em;}
   .os-list{list-style:none;padding:0;margin:0;}
   .os-list li{padding:12px 0;border-bottom:1px solid var(--border);}
@@ -404,14 +407,18 @@
     .bio{max-width:none;}
     .social-row,.hero-actions{justify-content:center;}
     .hero-grid{grid-template-columns:1fr;}
+    .timeline{padding-left:24px;}
     .news-thumb{width:76px;height:76px;}
     .news-body{padding:10px 12px;}
     .pub{grid-template-columns:1fr;}
     .pub-year{padding-top:0;}
     .footer-contact{flex-direction:column;text-align:center;}
+    .footer-inner{flex-direction:column;text-align:center;}
+    .section-head{justify-content:center;text-align:center;}
+    .news-filters{justify-content:center;}
     .r-stats{grid-template-columns:repeat(2,1fr);row-gap:18px;}
     .r-stat{border-left:none;}
-    .r-findings{grid-template-columns:1fr;}
+    .r-findings, .r-findings-2col{grid-template-columns:1fr;}
     .r-videos{grid-template-columns:1fr;}
     .r-syn-grid{grid-template-columns:1fr;}
     .r-chapter-head{align-items:flex-start;}
@@ -459,7 +466,7 @@
         <p class="eyebrow">Prime Minister's Research Fellow</p>
         <h1>Prasenjit Karmakar</h1>
         <p class="org">Doctoral Researcher, <a href="https://ubinet-iitkgp.github.io/ubinet/" target="_blank" rel="noopener">UbiNet Lab</a>, IIT Kharagpur</p>
-        <p class="bio">I am presently pursuing a Ph.D. in the Department of Computer Science and Engineering at the Indian Institute of Technology Kharagpur, India. I am a member of the <a href="https://ubinet-iitkgp.github.io/ubinet/" target="_blank" rel="noopener">UbiNet: Ubiquitous Networked Systems Lab</a>. My doctoral research is supported by the <a href="https://www.pmrf.in/" target="_blank" rel="noopener">Prime Minister's Research Fellowship</a>.</p>
+        <p class="bio">I am presently pursuing a Ph.D. in the Department of Computer Science and Engineering at the Indian Institute of Technology Kharagpur, India. I am a member of the <a href="https://ubinet-iitkgp.github.io/ubinet/" target="_blank" rel="noopener">UbiNet Lab</a>. My doctoral research is supported by the <a href="https://www.pmrf.in/" target="_blank" rel="noopener">Prime Minister's Research Fellowship</a>.</p>
         <div class="social-row">
           <a class="icon-btn" href="mailto:prasenjitkarmakar52282@gmail.com" aria-label="Email" title="Email">
             <svg class="icon" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4Zm2 2.4V18h16V6.4l-8 6.4-8-6.4Zm.6-.4L12 10.5 19.4 6H4.6Z"/></svg>
@@ -1076,7 +1083,7 @@
         <p>With DALTON in hand, the team asked a follow-up question: where does pollution actually collect in a home, and why can't people just feel it? Analyzing airflow, floor plans, and occupant behavior across the 30 sites turned up patterns that most air monitors and most people, completely miss.</p>
 
         <div class="r-findings-label">Key findings</div>
-        <div class="r-findings" style="grid-template-columns:repeat(2,1fr);">
+        <div class="r-findings r-findings-2col">
           <div class="r-finding"><h5>Bedrooms trap more than kitchens</h5><p>In both summer and winter, isolated bedrooms accumulate more pollutant than the kitchen where the cooking actually happens, as closed doors and low traffic give it nowhere to go.</p></div>
           <div class="r-finding"><h5>The overnight sink effect</h5><p>Dirty dishes and food scraps left in the kitchen sink raise VOC and ethanol levels for hours, and the effect lingers until the next day even when nobody is home.</p></div>
           <div class="r-finding"><h5>Isolated floor plans trap pollutants</h5><p>Airflow directs where pollution spreads, so a sealed-off kitchen or bedroom can hold onto VOCs long after CO2 has already cleared with basic window ventilation.</p></div>
@@ -1291,8 +1298,7 @@
     </div>
   </div>
   <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Prasenjit Karmakar &middot; Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
-    <a href="https://github.com/prasenjit52282/prasenjit52282.github.io" target="_blank" rel="noopener">View source</a>
+    <span>© <span id="year"></span> Prasenjit Karmakar</span>
   </div>
 </footer>
 
