@@ -169,27 +169,41 @@
   .section-sub{color:var(--text-muted);max-width:60ch;margin-top:.4em;}
 
   /* experience */
-  .timeline{position:relative;padding-left:0;}
+  .timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .timeline::after{
+    content:"";position:absolute;top:26px;left:26px;right:26px;height:3px;background:var(--border);
+  }
   .exp-item{
-    display:grid;grid-template-columns:52px 1fr;gap:18px;
-    padding-bottom:30px;position:relative;
+    display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;
   }
-  .exp-item:last-child{padding-bottom:0;}
-  .exp-item::before{
-    content:"";position:absolute;left:25px;top:52px;bottom:0;width:1px;background:var(--border);
-  }
-  .exp-item:last-child::before{display:none;}
+  .exp-item::before{display:none;}
+  .exp-item>div:not(.exp-logo){align-self:stretch;text-align:left;}
   .exp-logo{
     width:52px;height:52px;border-radius:12px;background:#fff;
     border:1px solid var(--border);
     display:flex;align-items:center;justify-content:center;padding:9px;
-    box-shadow:var(--shadow);
+    box-shadow:var(--shadow);position:relative;z-index:1;flex:none;
   }
   .exp-logo img{width:100%;height:100%;object-fit:contain;}
   .exp-role{font-weight:700;font-size:1.05rem;color:var(--text);}
   .exp-org{color:var(--accent);font-weight:600;}
+  .exp-org-ended a{color:var(--text-muted);}
   .exp-meta{color:var(--text-muted);font-size:.88rem;margin:.15em 0 .6em;}
   .exp-item ul{margin-bottom:0;}
+  @media (min-width:761px){
+    #experience{padding-top:30px;padding-bottom:0px;}
+    .timeline{gap:16px;}
+    .exp-item[data-exp-order="1"]{order:1;}
+    .exp-item[data-exp-order="2"]{order:2;}
+    .exp-item[data-exp-order="3"]{order:3;}
+    .exp-item[data-exp-order="4"]{order:4;}
+    .exp-role{font-size:.92rem;}
+    .exp-org{font-size:.86rem;}
+    .exp-meta{font-size:.72rem;margin:.1em 0 .45em;}
+    .exp-item ul{font-size:.82rem;padding-left:1.1em;}
+    .exp-item li{margin-bottom:.2em;}
+    .exp-item li:last-child{margin-bottom:0;}
+  }
 
   /* publications */
   .pub-controls{display:flex;gap:.8em;flex-wrap:wrap;align-items:center;margin-bottom:28px;}
@@ -432,6 +446,7 @@
     .r-mobile-progress{display:block;}
   }
   @media (max-width:760px){
+    #experience{padding-top:16px;padding-bottom:0;}
     .nav-links{
       position:fixed;top:64px;left:0;right:0;
       background:var(--bg);border-bottom:1px solid var(--border);
@@ -445,7 +460,17 @@
     .bio{max-width:none;}
     .social-row,.hero-actions{justify-content:center;}
     .hero-grid{grid-template-columns:1fr;}
-    .timeline{padding-left:24px;}
+    .timeline{grid-template-columns:1fr;gap:0;padding-left:24px;}
+    .timeline::after{display:none;}
+    .exp-item{
+      display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;
+      padding:0 0 30px;position:relative;
+    }
+    .exp-item:last-child{padding-bottom:0;}
+    .exp-item::before{
+      display:block;content:"";position:absolute;left:24.5px;top:52px;bottom:0;width:3px;background:var(--border);
+    }
+    .exp-item:last-child::before{display:none;}
     .news-thumb{width:76px;height:76px;}
     .news-body{padding:10px 12px;}
     .pub{grid-template-columns:1fr;}
@@ -567,24 +592,11 @@
     </div>
     <div class="timeline">
 
-      <div class="exp-item">
-        <div class="exp-logo"><img src="img/logos/smu.svg" alt="Singapore Management University logo"></div>
-        <div>
-          <div class="exp-role">Visiting Researcher</div>
-          <div class="exp-org"><a href="https://computing.smu.edu.sg/" target="_blank" rel="noopener">Singapore Management University</a></div>
-          <div class="exp-meta">Singapore &middot; Jul 2025 – Jan 2026</div>
-          <ul>
-            <li>Collaborative research</li>
-            <li>Embodied AI and LLMs</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp-item">
+      <div class="exp-item" data-exp-order="4">
         <div class="exp-logo"><img src="img/logos/iitkgp.svg" alt="IIT Kharagpur logo"></div>
         <div>
           <div class="exp-role">Doctoral Researcher</div>
-          <div class="exp-org"><a href="http://www.iitkgp.ac.in/" target="_blank" rel="noopener">Indian Institute of Technology Kharagpur</a></div>
+          <div class="exp-org"><a href="http://www.iitkgp.ac.in/" target="_blank" rel="noopener">IIT Kharagpur</a></div>
           <div class="exp-meta">Kharagpur, India &middot; Apr 2022 – Present</div>
           <ul>
             <li>Technical writing</li>
@@ -594,23 +606,37 @@
         </div>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-logo"><img src="img/logos/tcs.svg" alt="Tata Consultancy Services logo"></div>
+      <div class="exp-item" data-exp-order="3">
+        <div class="exp-logo"><img src="img/logos/smu.svg" alt="Singapore Management University logo"></div>
         <div>
-          <div class="exp-role">Systems Engineer</div>
-          <div class="exp-org"><a href="https://www.tcs.com/" target="_blank" rel="noopener">Tata Consultancy Services</a></div>
-          <div class="exp-meta">Bangalore, India &middot; Nov 2020 – Apr 2022</div>
+          <div class="exp-role">Visiting Researcher</div>
+          <div class="exp-org exp-org-ended"><a href="https://computing.smu.edu.sg/" target="_blank" rel="noopener">Singapore Management University</a></div>
+          <div class="exp-meta">Singapore &middot; Jul 2025 – Jan 2026</div>
           <ul>
-            <li>Frontend development</li>
+            <li>Collaborative research</li>
+            <li>Embodied AI and LLMs</li>
           </ul>
         </div>
       </div>
 
-      <div class="exp-item">
+      <div class="exp-item" data-exp-order="2">
+        <div class="exp-logo"><img src="img/logos/tcs.svg" alt="Tata Consultancy Services logo"></div>
+        <div>
+          <div class="exp-role">Systems Engineer</div>
+          <div class="exp-org exp-org-ended"><a href="https://www.tcs.com/" target="_blank" rel="noopener">Tata Consultancy Services</a></div>
+          <div class="exp-meta">Bangalore, India &middot; Nov 2020 – Apr 2022</div>
+          <ul>
+            <li>Frontend development</li>
+            <li>Backend development</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item" data-exp-order="1">
         <div class="exp-logo"><img src="img/logos/nitdgp.svg" alt="NIT Durgapur logo"></div>
         <div>
           <div class="exp-role">Research Intern</div>
-          <div class="exp-org"><a href="https://nitdgp.ac.in/" target="_blank" rel="noopener">National Institute of Technology Durgapur</a></div>
+          <div class="exp-org exp-org-ended"><a href="https://nitdgp.ac.in/" target="_blank" rel="noopener">NIT Durgapur</a></div>
           <div class="exp-meta">Durgapur, India &middot; Sep 2019 – Sep 2020</div>
           <ul>
             <li>Data analytics</li>
